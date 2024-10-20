@@ -1,0 +1,459 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins' , sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: #000;
+    color: #fff;
+}
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('./images/header-image.png');
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8px;
+    position: relative;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 100px;
+}
+.logo{
+    width: 150px;
+    cursor: pointer;
+}
+nav button{
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color:#fff ;
+    padding: 7px 20px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-left:10px ;
+    cursor: pointer;
+}
+.language-btn{
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 7px 10px;
+}
+.language-btn img{
+    width: 10px;
+    margin-left: 10px;
+}
+.header-contain{
+    position: absolute;
+    top:40% ;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    text-align: center;
+    margin-top: 100px;
+
+}
+.header-contain h1{
+    font-size: 60px;
+    font-weight: 700;
+    max-width:650px ;
+}
+.header-contain h3{
+    font-weight: 400 ;
+    margin-bottom: 20px;
+}
+.email-signup {
+    padding: 0 30px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.email-signup input {
+    height: 7vh;
+    flex: 1; /* Allow input to take remaining space */
+    padding: 10px; /* Add padding for height */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.1);
+    margin-right: 10px;
+}
+
+.email-signup button {
+    height: 7vh;
+    width: 30%;
+    background: #db0001;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* ----------slide---------- */
+.container {
+    min-width: 1200px;
+    width: 95%;
+    position: relative;
+    overflow: visible; /* Ensure that overflow is visible */
+}
+
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.slider-wrapper .image-list {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 30px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.slider-wrapper .image-list .image-item {
+    width: 200px;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.slider-wrapper .slide-button {
+    position: absolute;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    border: none;
+    background: #000;
+    font-size: 2.2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Ensure buttons are on top of other content */
+}
+
+.slider-wrapper .slide-button#prev-slide {
+    left: -20px; /* Adjust as needed to make sure it stays within view */
+}
+
+.slider-wrapper .slide-button#next-slide {
+    right: -20px;
+}
+.container .slider-scrollbar {
+    height: 24px;
+    width: 100%;
+    background: red;
+    display: flex;
+    align-items: center;
+}
+.slider-scrollbar .scrollbar-track{
+    height: 2px;
+    width: 100%;
+    background: #ccc;
+    position: relative;
+}
+.slider-scrollbar:hover .scrollbar-track{
+    height: 4px;
+
+}
+.slider-scrollbar .scrollbar-thumb{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background: #000;
+    border-radius: inherit;
+    cursor: grab;
+}
+.slider-scrollbar .scrollbar-thumb:active{
+    cursor: grabbing;
+    height: 8px;
+    top: -2px;
+
+}
+.slider-scrollbar .scrollbar-thumb::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
+    bottom: -10px;
+}
+
+/* -----------data container----------- */
+.data-container{
+    margin-top: 30px;
+}
+.data-container .grid-conatiner{
+    padding: 0 125px;
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+   
+}
+.grid-conatiner .grid-item {
+    margin: 0 15px; /* Set horizontal margin */
+    border-radius: 20px;
+    width: calc(100% - 30px); /* Adjust width to account for horizontal margins */
+    height: 37vh;
+    background: linear-gradient(to bottom right, #1c1830, #192043, #192043, #200e17);
+    position: relative; /* Set position to relative for absolute positioning of img */
+    overflow: hidden; /* Optional: hide overflow to keep layout clean */
+}
+.data-container h3{
+    padding:20px 150px;
+}
+.grid-conatiner .grid-item h2{
+    text-align: left;
+    margin: 20px 20px;
+}
+.grid-conatiner .grid-item p{
+    text-align: left;
+    margin: 20px 20px;
+    line-height: 1.5;
+}
+.grid-conatiner .grid-item img {
+    position: absolute; /* Set img to absolute positioning */
+    bottom: 10px; /* Position it 10px from the bottom */
+    right: 10px; /* Position it 10px from the right */
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+/* -------------faq------------ */
+.faq {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.faq h2 {
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.accordion {
+    margin: 60px auto;
+    width: 100%;
+    
+}
+
+.accordion li {
+    list-style: none;
+    width: 1250px; /* or a fixed width like 600px */
+    max-width: 1250px; /* Ensures it doesn't exceed this width */
+    margin: 0 auto; /* Center it */
+    padding: 5px;
+}
+
+.accordion li label {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background: #303030;
+    color: white;
+    position: relative;
+    cursor: pointer;
+}
+
+label::after {
+    content: "+";
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.accordion .content {
+   
+    background: #303030;
+    color: white;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;   /* Initially hidden */
+    overflow: hidden;
+    transition: max-height 0.5s ,padding 0.5s;
+}
+
+.accordion input[type="radio"]:checked + label + .content {
+    max-height: 600px; /* Expands when clicked */
+    padding: 30px 20px;
+    margin-top: 5px;
+}
+
+.accordion input[type="radio"]:checked + label::after {
+   transform: rotate(135deg);
+}
+.faq .email-signup{
+    max-width: 600px;
+    margin: 20px auto 60px;
+
+}
+.faq small{
+    font-size: 13px;
+    
+}
+/* ----------footer--------- */
+.footer {
+    padding: 50px 15% 10px;
+    border-top: 6px solid #333;
+    color: #777;
+}
+
+.footer h2 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.footer .row {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap if they exceed the width */
+    justify-content: space-between; /* Adds space between columns */
+    align-items: flex-start;
+    padding: 10px 0;
+}
+
+.footer .col {
+    flex-basis: 22%; /* Ensures columns take about 1/4 of the row */
+    margin-bottom: 20px;
+}
+
+.footer .col a {
+    display: block;
+    text-decoration: none;
+    color: #777;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer .col a:hover {
+    color: #333; /* Darkens the color on hover */
+}
+.footer .language-btn{
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+.copyright-txt{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+/* ------------medai quries------------- */
+@media only screen and (max-width: 600px) {
+    .logo {
+        width: 100px;
+    }
+    nav{
+        padding: 10px 10px;
+    }
+    nav button {
+        padding: 5px 10px;
+    }
+    nav .language-btn {
+        padding: 4px 8px;
+    }
+    .header-contain {
+        position: unset;
+        transform: none;
+        padding: 0 20px;
+    }
+    .header-contain h1 {
+        font-size: 30px;
+    }
+  
+    .email-signup {
+        flex-direction: column; /* Stack input and button vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .email-signup input {
+        width: 100%; /* Full width for input */
+        margin-bottom: 10px; /* Space between input and button */
+    }
+
+    .email-signup button {
+        width: auto; 
+        
+    }
+    .faq h2 {
+        font-size: 17px;
+        text-align: left;
+        padding-left: 17px;
+    }
+    .faq small{
+        text-align: left;
+        padding: 0px;
+    }
+   
+    
+    .accordion .content {
+        font-size: 14px; /* Change font-style to font-size */
+    }
+    .accordion li label {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .accordion {
+        margin: 10px auto;
+    }
+    .accordion li{
+        width: 300px; /* or a fixed width like 600px */
+    }
+    label::after {
+        font-size: 22px;
+    }
+    .footer .row {
+        display: flex;
+        flex-direction: column;
+    }
+    .data-container {
+
+        margin: 15px 15px; /* Adjust container margins */
+    }
+    .data-container h3{
+        padding:0 14px;
+    }
+    .data-container h2{
+        margin-top: 30px;
+        margin-left: 10px;
+        font-size: 20px;
+    }
+    .data-container .grid-conatiner {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column for mobile screens */
+        gap: 0px; /* Add gap for spacing between grid items */
+        padding: 0 10px;
+    }
+    .grid-conatiner .grid-item {
+      
+        width: 300px;
+        height: 35vh; /* Adjust height for small screens */
+        margin: 10px 0; /* Reduce margins vertically */
+    }
+    .grid-conatiner .grid-item img {
+        width: 80px; /* Reduce image size on small screens */
+        bottom: 5px; /* Adjust positioning */
+        right: 5px; /* Adjust positioning */
+    }
+}
+
+
