@@ -95,129 +95,124 @@ nav button{
     border-radius: 4px;
     padding: 10px 20px;
     cursor: pointer;
+    font-size: 17px;
+    font-weight: 700;
 }
+/*------------ slides------------ */
 
-/* ----------slide---------- */
-.container {
-    min-width: 1200px;
-    width: 95%;
-    position: relative;
-    overflow: visible; /* Ensure that overflow is visible */
-}
-
-.slider-wrapper {
-    position: relative;
+.movie-list .movie-container {
     display: flex;
     align-items: center;
-}
-
-.slider-wrapper .image-list {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    gap: 30px;
+    justify-content: space-evenly;
+    gap: 10px;
     width: 100%;
+    padding: 20px 10% 0 10%;
+    margin-top: 0px;
+}
+
+.movie-container .img-no-items img {
+    width: 150px;
+    border-radius: 15px;
+}
+
+.movie-container .img-no-items {
     position: relative;
-    margin-bottom: 30px;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling transition */
 }
 
-.slider-wrapper .image-list .image-item {
-    width: 200px;
-    height: 90%;
-    object-fit: cover;
-    border-radius: 20px;
+/* Apply hover effect on the entire .img-no-items, not just the image */
+.movie-container .img-no-items:hover {
+    transform: scale(1.1); /* Scale the entire div on hover */
 }
 
-.slider-wrapper .slide-button {
+.movie-container .img-no-items #no {
     position: absolute;
-    top: 50%;
-    height: 50px;
-    width: 50px;
-    color: #fff;
-    border: none;
-    background: #000;
-    font-size: 2.2rem;
-    cursor: pointer;
-    border-radius: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10; /* Ensure buttons are on top of other content */
+    bottom: 3%;
+    left: -15%;
+    font-size: 90px;
+    color: black;
+    font-weight: 700;
+    -webkit-text-stroke: 1.5px white;
 }
 
-.slider-wrapper .slide-button#prev-slide {
-    left: -20px; /* Adjust as needed to make sure it stays within view */
+.movie-container .img-no-items #top-10 {
+    position: absolute;
+    width: 34px;
+    height: 45px;
+    top: 0.1px;
+    right: 0.1px;
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+    background-color: red;
+    padding: 5px;
+    border-top-right-radius: 15px;
+    clip-path: polygon(
+        0px 0px,  /* top-left: */
+        calc(100% - 1px) 1px,  /* top-right */
+        calc(100% - 0px) calc(100% - 3px),  /* bottom-right */
+        0px calc(100% - 12px) /* bottom-left */
+    );
 }
 
-.slider-wrapper .slide-button#next-slide {
-    right: -20px;
-}
-.container .slider-scrollbar {
-    height: 24px;
-    width: 100%;
+#recently-added {
+    font-weight: 600;
+    padding-top: 3px;
+    width: 80%;
+    height: 25px;
     background: red;
-    display: flex;
-    align-items: center;
-}
-.slider-scrollbar .scrollbar-track{
-    height: 2px;
-    width: 100%;
-    background: #ccc;
-    position: relative;
-}
-.slider-scrollbar:hover .scrollbar-track{
-    height: 4px;
-
-}
-.slider-scrollbar .scrollbar-thumb{
+    text-align: center;
     position: absolute;
-    height: 100%;
-    width: 50%;
-    background: #000;
-    border-radius: inherit;
-    cursor: grab;
+    left: 50%;
+    bottom: -7px;
+    transform: translate(-50%, -50%);
 }
-.slider-scrollbar .scrollbar-thumb:active{
-    cursor: grabbing;
-    height: 8px;
-    top: -2px;
 
+/* Optional transition for smooth hover effect on text */
+.movie-container .img-no-items #no,
+.movie-container .img-no-items #top-10,
+.movie-container .img-no-items #recently-added {
+    transition: transform 0.3s ease-in-out; /* Makes text scale smoothly along with the image */
 }
-.slider-scrollbar .scrollbar-thumb::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -10px;
-    bottom: -10px;
+
+.movie-list h2 {
+    padding-top: 60px;
+    padding-left: 150px;
 }
+   
 
 /* -----------data container----------- */
-.data-container{
+.data-container {
     margin-top: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .data-container .grid-conatiner{
     padding: 0 125px;
     display: grid;
     grid-template-columns: repeat(4 , 1fr);
+    
    
 }
 .grid-conatiner .grid-item {
+  
     margin: 0 15px; /* Set horizontal margin */
     border-radius: 20px;
     width: calc(100% - 30px); /* Adjust width to account for horizontal margins */
-    height: 37vh;
+    height: 30vh;
     background: linear-gradient(to bottom right, #1c1830, #192043, #192043, #200e17);
     position: relative; /* Set position to relative for absolute positioning of img */
     overflow: hidden; /* Optional: hide overflow to keep layout clean */
 }
-.data-container h3{
-    padding:20px 150px;
+.data-container1 h2{
+    padding-top: 70px;
+    padding-left: 150px;
+
 }
 .grid-conatiner .grid-item h2{
     text-align: left;
-    margin: 20px 20px;
+    margin: 20px 10px;
 }
 .grid-conatiner .grid-item p{
     text-align: left;
@@ -226,25 +221,30 @@ nav button{
 }
 .grid-conatiner .grid-item img {
     position: absolute; /* Set img to absolute positioning */
-    bottom: 10px; /* Position it 10px from the bottom */
-    right: 10px; /* Position it 10px from the right */
-    width: 100px; /* Adjust width as needed */
+    bottom: 5px; /* Position it 10px from the bottom */
+    right: 5px; /* Position it 10px from the right */
+    width: 90px; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
 }
 /* -------------faq------------ */
 .faq {
     padding: 10px;
-    text-align: center;
     font-size: 18px;
 }
+.faq small{
+    padding-left: 540px;
+    
+}
+
 
 .faq h2 {
-    font-weight: 500;
-    font-size: 40px;
+    font-size: 25px;
+    padding-left: 140px;
+    margin-top: 30px;
 }
 
 .accordion {
-    margin: 60px auto;
+    margin: 30px auto;
     width: 100%;
     
 }
@@ -399,10 +399,7 @@ input[type="radio"] {
         text-align: left;
         padding-left: 17px;
     }
-    .faq small{
-        text-align: left;
-        padding: 0px;
-    }
+  
    
     
     .accordion .content {
@@ -430,11 +427,11 @@ input[type="radio"] {
         margin: 15px 15px; /* Adjust container margins */
     }
     .data-container h3{
-        padding:0 14px;
-    }
-    .data-container h2{
-        margin-top: 30px;
-        margin-left: 10px;
+        padding-top: 30px;
+        padding-left: 1px;
+        font-size: 20px;    }
+    .data-container1 h2{
+        padding-left: 15px;
         font-size: 20px;
     }
     .data-container .grid-conatiner {
@@ -446,7 +443,7 @@ input[type="radio"] {
     .grid-conatiner .grid-item {
       
         width: 300px;
-        height: 35vh; /* Adjust height for small screens */
+        height: 40vh; /* Adjust height for small screens */
         margin: 10px 0; /* Reduce margins vertically */
     }
     .grid-conatiner .grid-item img {
@@ -454,6 +451,14 @@ input[type="radio"] {
         bottom: 5px; /* Adjust positioning */
         right: 5px; /* Adjust positioning */
     }
+    .movie-list .movie-container{
+        gap: 35px;
+    }
+    .movie-list h2{
+        padding-top: 60px;
+        padding-left: 15px;
+        font-size: 20px;
+    }  
 }
 
 
